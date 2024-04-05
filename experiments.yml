@@ -1,0 +1,145 @@
+builds:
+  - name: networkit
+    git: 'https://github.com/fabratu/networkit.git'
+    regenerate:
+      - args: ['git', 'submodule', 'update', '--init']
+    configure:
+      - args:
+          - 'cmake'
+          - '-DCMAKE_INSTALL_PREFIX=@THIS_PREFIX_DIR@'
+          - '-DCMAKE_BUILD_TYPE=Release'
+          # - '-DNETWORKIT_NODE_STORAGE=u32'
+          - '@THIS_CLONE_DIR@'
+        environ:
+            'CXX': 'g++'
+    compile:
+      - args: ['make', '-j@PARALLELISM@']
+    install:
+      - args: ['make', 'install']
+  
+  - name: dynamic-b-suitor
+    git: 'https://github.com/hu-macsy/dynamic-b-suitor.git'
+    requires:
+      - networkit
+    configure:
+      - args:
+          - 'cmake'
+          - '-DCMAKE_INSTALL_PREFIX=@THIS_PREFIX_DIR@'
+          - '-DCMAKE_BUILD_TYPE=Release'
+          - '@THIS_CLONE_DIR@'
+        environ:
+            'CXX': 'g++'
+            # 'CXXFLAGS': '-DNETWORKIT_U32_NODES'
+    compile:
+      - args: ['make', '-j@PARALLELISM@']
+    install:
+      - args: ['make', 'install']
+    extra_paths: ['@THIS_PREFIX_DIR@']
+
+revisions:
+  - name: comparison
+    build_version:
+        'networkit': '015c2ee30a1e838ca4bcd54204778d4ed67fcf0c'
+        'dynamic-b-suitor': 'main'
+
+# must be a subset of instances listed in graphs.txt and downloaded by download_graph_files.py or created by generate_random_graph.py
+instances:
+  - repo: local
+    set: real_sparse
+    items:
+      - human_gene2.mtx
+      - mouse_gene.mtx
+      - cage14.mtx
+      - bone010.mtx
+      - cage15.mtx
+
+  - repo: local
+    set: real_social
+    items:
+      - com-youtube.mtx
+      - petster-catdog-friend.mtx
+      - flickr-growth.nkb
+      - soc-LiveJournal1.mtx
+      - orkut-links.mtx
+
+  - repo: local
+    set: real_infrastructure
+    items:
+      - belgium.nkb
+      - austria.nkb
+      - poland.nkb
+      - france.nkb
+      - africa.nkb
+
+  - repo: local
+    set: random
+    items:
+      - rmat-b.nkb
+      - rmat-g.nkb
+      - rmat-er.nkb
+
+experiments:
+  - name: dynamic-b-suitor
+    use_builds: [dynamic-b-suitor]
+    args: ['dyn-b-suitor-comparison', '@INSTANCE@', '@EXTRA_ARGS@']
+    num_nodes: 1
+    procs_per_node: 1
+    num_threads: 24
+    stdout: out
+    environ:
+      OMP_NUM_THREADS: 24
+
+# need prefix (1_, 2_, 3_) because of lexicographical sorting of the cross product elements
+variants:
+  - axis: 'operation'
+    items:
+            # - name: '1_op=insert'
+            #extra_args: ['insert']
+      - name: '1_op=remove'
+        extra_args: ['remove']
+
+  - axis: 'batch_size'
+    items:
+      - name: '2_batch_s=10e0'
+        extra_args: ['1']
+      - name: '2_batch_s=10e1'
+        extra_args: ['10']
+      - name: '2_batch_s=10e2'
+        extra_args: ['100']
+      - name: '2_batch_s=10e3'
+        extra_args: ['1000']
+
+  - axis: 'b_value'
+    items:
+      - name: '3_b_val=1'
+        extra_args: ['1']
+      - name: '3_b_val=2'
+        extra_args: ['2']
+      - name: '3_b_val=3'
+        extra_args: ['3']
+      - name: '3_b_val=random'
+        extra_args: ['random']
+
+matrix:
+  include:
+    # # Test operation axis on real graphs
+    # - experiments: [dynamic-b-suitor]
+    #   instsets: [real_sparse]
+    #   axes: ['operation', 'batch_size', 'b_value']
+    #   revisions: [comparison]
+
+    # - experiments: [dynamic-b-suitor]
+    #   instsets: [real_infrastructure]
+    #   axes: ['operation', 'batch_size', 'b_value']
+    #   revisions: [comparison]
+
+    # - experiments: [dynamic-b-suitor]
+    #   instsets: [real_social]
+    #   axes: ['operation', 'batch_size', 'b_value']
+    #   revisions: [comparison]
+
+    # Test operation axis on a random generated graph
+    - experiments: [dynamic-b-suitor]
+      instsets: [random]
+      axes: ['operation', 'batch_size', 'b_value']
+      revisions: [comparison]
