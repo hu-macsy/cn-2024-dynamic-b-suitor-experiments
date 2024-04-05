@@ -8,6 +8,7 @@ builds:
           - 'cmake'
           - '-DCMAKE_INSTALL_PREFIX=@THIS_PREFIX_DIR@'
           - '-DCMAKE_BUILD_TYPE=Release'
+          - '-DNETWORKIT_CXX_STANDARD=20'
           # - '-DNETWORKIT_NODE_STORAGE=u32'
           - '@THIS_CLONE_DIR@'
         environ:
@@ -18,7 +19,7 @@ builds:
       - args: ['make', 'install']
   
   - name: dynamic-b-suitor
-    git: 'https://github.com/hu-macsy/dynamic-b-suitor.git'
+    git: 'https://github.com/hu-macsy/esa-2024-dynamic-b-suitor-experiments.git'
     requires:
       - networkit
     configure:
@@ -26,6 +27,7 @@ builds:
           - 'cmake'
           - '-DCMAKE_INSTALL_PREFIX=@THIS_PREFIX_DIR@'
           - '-DCMAKE_BUILD_TYPE=Release'
+          - '-DNETWORKIT_CXX_STANDARD=20' 
           - '@THIS_CLONE_DIR@'
         environ:
             'CXX': 'g++'
@@ -39,7 +41,7 @@ builds:
 revisions:
   - name: comparison
     build_version:
-        'networkit': '015c2ee30a1e838ca4bcd54204778d4ed67fcf0c'
+        'networkit': '20240208_dyn_b_suitor'
         'dynamic-b-suitor': 'main'
 
 # must be a subset of instances listed in graphs.txt and downloaded by download_graph_files.py or created by generate_random_graph.py
