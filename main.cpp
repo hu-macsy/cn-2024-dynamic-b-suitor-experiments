@@ -8,6 +8,7 @@
 #include <networkit/graph/Graph.hpp>
 #include <networkit/graph/GraphTools.hpp>
 #include <networkit/io/MatrixMarketGraphReader.hpp>
+#include <networkit/io/NetworkitBinaryReader.hpp>
 #include <networkit/matching/BSuitorMatcher.hpp>
 #include <networkit/matching/DynamicBSuitorMatcher.hpp>
 
@@ -56,7 +57,8 @@ bool parseInput(std::vector<std::string> args) {
       G.setWeight(u, v, Aux::Random::integer(1, 100));
     });
   } else {
-    G = MatrixMarketGraphReader{}.read(args.at(1));
+    // G = MatrixMarketGraphReader{}.read(args.at(1));
+    G = NetworkitBinaryReader{}.read(args.at(1));
     G.removeSelfLoops();
     G.removeMultiEdges();
   }
