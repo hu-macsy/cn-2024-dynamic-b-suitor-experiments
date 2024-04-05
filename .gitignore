@@ -35,3 +35,11 @@ build/*
 *.exe
 *.out
 *.app
+
+# Simexpal
+validation.cache
+status.cache
+builds
+aux
+output
+instances/*
