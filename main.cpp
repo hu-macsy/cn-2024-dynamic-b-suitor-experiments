@@ -281,6 +281,13 @@ void printResults() {
   for (auto r : stat_rt) {
     std::cout << r.count() << std::endl;
   }
+
+  std::cout << std::endl;
+
+  std::cout << "Static vs. Dynamic (Identity of Suitors)" << std::endl;
+  for (auto w : dyn_ws) {
+    std::cout << std::abs(w - stat_w) << std::endl;
+  }
 }
 
 int main(int argc, char *argv[]) {
@@ -302,6 +309,7 @@ int main(int argc, char *argv[]) {
             << " edges." << std::endl;
   std::cout << std::endl;
 
+
   for (int i = 0; i < num_runs; i++) {
     Aux::Random::setSeed(i, true);
     std::default_random_engine random_generator(i);
@@ -309,6 +317,7 @@ int main(int argc, char *argv[]) {
     num_b.has_value() ? runDynamicBSuitor(G, num_b.value(), random_generator)
                       : runDynamicBSuitor(G, vec_b.value(), random_generator);
   }
+
   num_b.has_value() ? runStaticBSuitor(G, num_b.value())
                     : runStaticBSuitor(G, vec_b.value());
 

@@ -121,26 +121,26 @@ variants:
         extra_args: ['3']
       - name: '3_b_val=10'
         extra_args: ['10']
-      # - name: '3_b_val=random'
-      #   extra_args: ['random']
+      - name: '3_b_val=random'
+        extra_args: ['random']
 
 matrix:
   include:
-    # # Test operation axis on real graphs
-    # - experiments: [dynamic-b-suitor]
-    #   instsets: [real_sparse]
-    #   axes: ['operation', 'batch_size', 'b_value']
-    #   revisions: [comparison]
+    # Test operation axis on real graphs
+    - experiments: [dynamic-b-suitor]
+      instsets: [real_sparse]
+      axes: ['operation', 'batch_size', 'b_value']
+      revisions: [comparison]
 
-    # - experiments: [dynamic-b-suitor]
-    #   instsets: [real_infrastructure]
-    #   axes: ['operation', 'batch_size', 'b_value']
-    #   revisions: [comparison]
+    - experiments: [dynamic-b-suitor]
+      instsets: [real_infrastructure]
+      axes: ['operation', 'batch_size', 'b_value']
+      revisions: [comparison]
 
-    # - experiments: [dynamic-b-suitor]
-    #   instsets: [real_social]
-    #   axes: ['operation', 'batch_size', 'b_value']
-    #   revisions: [comparison]
+    - experiments: [dynamic-b-suitor]
+      instsets: [real_social]
+      axes: ['operation', 'batch_size', 'b_value']
+      revisions: [comparison]
 
     # Test operation axis on a random generated graph
     - experiments: [dynamic-b-suitor]
