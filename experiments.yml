@@ -27,7 +27,7 @@ builds:
           - 'cmake'
           - '-DCMAKE_INSTALL_PREFIX=@THIS_PREFIX_DIR@'
           - '-DCMAKE_BUILD_TYPE=Release'
-          - '-DNETWORKIT_CXX_STANDARD=20' 
+          - '-DCMAKE_CXX_STANDARD=20' 
           - '@THIS_CLONE_DIR@'
         environ:
             'CXX': 'g++'
@@ -38,11 +38,29 @@ builds:
       - args: ['make', 'install']
     extra_paths: ['@THIS_PREFIX_DIR@']
 
+  - name: static-b-suitor
+    git: 'https://github.com/hu-macsy/bMatching.git'
+    configure:
+      - args:
+          - 'cmake'
+          - '-DCMAKE_INSTALL_PREFIX=@THIS_PREFIX_DIR@'
+          - '-DCMAKE_BUILD_TYPE=Release'
+          - '@THIS_CLONE_DIR@'
+        environ:
+            'CXX': 'g++'
+    compile:
+      - args: ['make', '-j@PARALLELISM@']
+    install:
+      - args: ['make', 'install']
+    extra_paths: ['@THIS_PREFIX_DIR@']
+
+
 revisions:
   - name: comparison
     build_version:
         'networkit': '20240208_dyn_b_suitor'
         'dynamic-b-suitor': 'main'
+        'static-b-suitor': 'master'
 
 # must be a subset of instances listed in graphs.txt and downloaded by download_graph_files.py or created by generate_random_graph.py
 instances:
@@ -64,21 +82,37 @@ instances:
       - soc-LiveJournal1.mtx
       - orkut-links.mtx
 
-  - repo: local
-    set: real_infrastructure
-    items:
-      - belgium.nkb
-      - austria.nkb
-      - poland.nkb
-      - france.nkb
-      - africa.nkb
+  # - repo: local
+  #   set: real_infrastructure
+  #   items:
+  #     - belgium.nkb
+  #     - austria.nkb
+  #     - poland.nkb
+  #     - france.nkb
+  #     - africa.nkb
+
+  # - repo: local
+  #   set: random
+  #   items:
+  #     - rmat-b.nkb
+  #     - rmat-g.nkb
+  #     - rmat-er.nkb
 
   - repo: local
-    set: random
+    set: real_infrastructure_mtx
     items:
-      - rmat-b.nkb
-      - rmat-g.nkb
-      - rmat-er.nkb
+      - belgium.mtx
+      - austria.mtx
+      - poland.mtx
+      - france.mtx
+      - africa.mtx
+
+  - repo: local
+    set: random_mtx
+    items:
+      - rmat-b.mtx
+      - rmat-g.mtx
+      - rmat-er.mtx
 
 experiments:
   - name: dynamic-b-suitor
@@ -90,6 +124,25 @@ experiments:
     stdout: out
     environ:
       OMP_NUM_THREADS: 24
+  - name: static-b-suitor-seq
+    use_builds: [static-b-suitor]
+    args: ['bMatching', '-f', '@INSTANCE@', -b, '@EXTRA_ARGS@', '-v']
+    num_nodes: 1
+    procs_per_node: 1
+    num_threads: 1
+    stdout: out
+    exclusive: true
+    environ:
+      OMP_NUM_THREADS: 1
+  - name: static-b-suitor-par
+    use_builds: [static-b-suitor]
+    args: ['bMatching', '-f', '@INSTANCE@', -b, '@EXTRA_ARGS@', '-v']
+    num_nodes: 1
+    procs_per_node: 1
+    num_threads: 256
+    stdout: out
+    environ:
+      OMP_NUM_THREADS: 256
 
 # need prefix (1_, 2_, 3_) because of lexicographical sorting of the cross product elements
 variants:
@@ -123,6 +176,10 @@ variants:
         extra_args: ['10']
       - name: '3_b_val=random'
         extra_args: ['random']
+  - axis: 'static'
+    items:
+      - name: 'true'
+        extra_args: ['1']
 
 matrix:
   include:
@@ -146,4 +203,16 @@ matrix:
     - experiments: [dynamic-b-suitor]
       instsets: [random]
       axes: ['operation', 'batch_size', 'b_value']
+      revisions: [comparison]
+
+    - experiments: [static-b-suitor-seq]
+      instsets: [real_sparse, real_social, real_infrastructure_mtx, random_mtx]
+      axes: ['b_value']
+      variants: ['3_b_val=1', '3_b_val=2', '3_b_val=3', '3_b_val=10']
+      revisions: [comparison]
+
+    - experiments: [static-b-suitor-par]
+      instsets: [real_sparse, real_social, real_infrastructure_mtx, random_mtx]
+      axes: ['b_value']
+      variants: ['3_b_val=1', '3_b_val=2', '3_b_val=3', '3_b_val=10']
       revisions: [comparison]

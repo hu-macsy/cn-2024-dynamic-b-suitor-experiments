@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.17)
 project(dyn-b-suitor-comparison CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 find_package(PkgConfig)
 pkg_check_modules(NETWORKIT REQUIRED IMPORTED_TARGET networkit)
