@@ -3,6 +3,7 @@
 #include <optional>
 #include <networkit/Globals.hpp>
 #include <networkit/algebraic/AlgebraicGlobals.hpp>
+#include <networkit/auxiliary/Log.hpp>
 #include <networkit/auxiliary/Random.hpp>
 #include <networkit/graph/Graph.hpp>
 #include <networkit/graph/GraphTools.hpp>
@@ -295,6 +296,9 @@ int main(int argc, char *argv[]) {
     printUse();
     return 1;
   }
+
+  Aux::Log::setLogLevel("QUIET");
+
   Aux::Random::setSeed(0, true);
 
   if (!parseInput(std::vector<std::string>(argv, argv + argc))) {

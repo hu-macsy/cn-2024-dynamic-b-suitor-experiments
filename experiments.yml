@@ -67,52 +67,40 @@ instances:
   - repo: local
     set: real_sparse
     items:
-      - human_gene2.mtx
-      - mouse_gene.mtx
-      - cage14.mtx
-      - bone010.mtx
-      - cage15.mtx
+      - human_gene2
+      - mouse_gene
+      - cage14
+      - bone010
+      - cage15
 
   - repo: local
     set: real_social
     items:
-      - com-youtube.mtx
-      - petster-catdog-friend.mtx
-      - flickr-growth.nkb
-      - soc-LiveJournal1.mtx
-      - orkut-links.mtx
-
-  # - repo: local
-  #   set: real_infrastructure
-  #   items:
-  #     - belgium.nkb
-  #     - austria.nkb
-  #     - poland.nkb
-  #     - france.nkb
-  #     - africa.nkb
-
-  # - repo: local
-  #   set: random
-  #   items:
-  #     - rmat-b.nkb
-  #     - rmat-g.nkb
-  #     - rmat-er.nkb
+      - com-youtube
+      - petster-catdog-friend
+      - flickr-growth
+      - soc-LiveJournal1
+      - orkut-links
 
   - repo: local
-    set: real_infrastructure_mtx
+    set: real_infrastructure
     items:
-      - belgium.mtx
-      - austria.mtx
-      - poland.mtx
-      - france.mtx
-      - africa.mtx
+      - belgium
+      - austria
+      - poland
+      - france
+      - africa
+      - asia
 
   - repo: local
-    set: random_mtx
+    set: random
     items:
-      - rmat-b.mtx
-      - rmat-g.mtx
-      - rmat-er.mtx
+      - rmat-b
+      - rmat-g
+      - rmat-er
+      - hyp-24-1
+      - hyp-24-2
+      - hyp-24-3
 
 experiments:
   - name: dynamic-b-suitor
@@ -206,13 +194,13 @@ matrix:
       revisions: [comparison]
 
     - experiments: [static-b-suitor-seq]
-      instsets: [real_sparse, real_social, real_infrastructure_mtx, random_mtx]
+      instsets: [real_sparse, real_social, real_infrastructure, random]
       axes: ['b_value']
       variants: ['3_b_val=1', '3_b_val=2', '3_b_val=3', '3_b_val=10']
       revisions: [comparison]
 
     - experiments: [static-b-suitor-par]
-      instsets: [real_sparse, real_social, real_infrastructure_mtx, random_mtx]
+      instsets: [real_sparse, real_social, real_infrastructure, random]
       axes: ['b_value']
       variants: ['3_b_val=1', '3_b_val=2', '3_b_val=3', '3_b_val=10']
       revisions: [comparison]
