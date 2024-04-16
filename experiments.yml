@@ -67,40 +67,58 @@ instances:
   - repo: local
     set: real_sparse
     items:
-      - human_gene2
-      - mouse_gene
-      - cage14
-      - bone010
-      - cage15
+      - human_gene2.mtx
+      - mouse_gene.mtx
+      - cage14.mtx
+      - bone010.mtx
+      - cage15.mtx
 
   - repo: local
     set: real_social
     items:
-      - com-youtube
-      - petster-catdog-friend
-      - flickr-growth
-      - soc-LiveJournal1
-      - orkut-links
+      - com-youtube.mtx
+      - petster-catdog-friend.mtx
+      - flickr-growth.mtx
+      - soc-LiveJournal1.mtx
+      - orkut-links.mtx
 
   - repo: local
     set: real_infrastructure
+    extensions:
     items:
-      - belgium
-      - austria
-      - poland
-      - france
-      - africa
-      - asia
+      - belgium.nkb
+      - austria.nkb
+      - poland.nkb
+      - france.nkb
+      - africa.nkb
+      - asia.nkb
 
   - repo: local
     set: random
     items:
-      - rmat-b
-      - rmat-g
-      - rmat-er
-      - hyp-24-1
-      - hyp-24-2
-      - hyp-24-3
+      - rmat-b.nkb
+      - rmat-g.nkb
+      - rmat-er.nkb
+      - hyp-24-1.nkb
+
+  - repo: local
+    set: real_infrastructure_mtx
+    extensions:
+    items:
+      - belgium-mtx
+      - austria-mtx
+      - poland-mtx
+      - france-mtx
+      - africa-mtx
+      - asia-mtx
+
+  - repo: local
+    set: random_mtx
+    items:
+      - rmat-b-mtx
+      - rmat-g-mtx
+      - rmat-er-mtx
+      - hyp-24-1-mtx
 
 experiments:
   - name: dynamic-b-suitor
@@ -200,7 +218,7 @@ matrix:
       revisions: [comparison]
 
     - experiments: [static-b-suitor-par]
-      instsets: [real_sparse, real_social, real_infrastructure, random]
+      instsets: [real_sparse, real_social, real_infrastructure_mtx, random_mtx]
       axes: ['b_value']
       variants: ['3_b_val=1', '3_b_val=2', '3_b_val=3', '3_b_val=10']
       revisions: [comparison]
