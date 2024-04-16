@@ -84,7 +84,6 @@ instances:
 
   - repo: local
     set: real_infrastructure
-    extensions:
     items:
       - belgium.nkb
       - austria.nkb
@@ -103,7 +102,6 @@ instances:
 
   - repo: local
     set: real_infrastructure_mtx
-    extensions:
     items:
       - belgium-mtx
       - austria-mtx
