@@ -319,6 +319,7 @@ int main(int argc, char *argv[]) {
 
 
   for (int i = 0; i < num_runs; i++) {
+      Aux::Log::setLogLevel("INFO");
     Aux::Random::setSeed(i, true);
     std::default_random_engine random_generator(i);
     INFO("Started run: ", i);
