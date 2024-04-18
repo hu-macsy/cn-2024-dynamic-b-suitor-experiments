@@ -189,7 +189,7 @@ void runDynamicBSuitor(Graph &G, BType &b,
       const auto [u, v] = GraphTools::randomEdge(G);
       assert(G.hasEdge(u, v));
       edges<WeightedEdge>.emplace_back(u, v, G.weight(u, v));
-      INFO("Edge: ", u, v, G.weight(u,v));
+      INFO("Edge: ", u, ",", v, ",", G.weight(u,v));
       G.removeEdge(u, v);
     }
   } else {
@@ -230,7 +230,7 @@ void runDynamicBSuitor(Graph &G, BType &b,
       std::normal_distribution<edgeweight> dist(avg_w, stddev);
       edgeweight w = dist(random_generator);
       edges<Edge>.emplace_back(u, v);
-      INFO("Edge: ", u, v, G.weight(u,v));
+      INFO("Edge: ", u, ",", v, ",", w);
       G.addEdge(u, v, w);
     }
   }
