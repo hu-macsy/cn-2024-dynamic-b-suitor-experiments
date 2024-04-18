@@ -210,7 +210,7 @@ matrix:
       revisions: [comparison]
 
     - experiments: [static-b-suitor-seq]
-      instsets: [real_sparse, real_social, real_infrastructure, random]
+      instsets: [real_sparse, real_social, real_infrastructure_mtx, random_mtx]
       axes: ['b_value']
       variants: ['3_b_val=1', '3_b_val=2', '3_b_val=3', '3_b_val=10']
       revisions: [comparison]

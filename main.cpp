@@ -181,6 +181,7 @@ template <typename BType>
 void runDynamicBSuitor(Graph &G, BType &b,
                        std::default_random_engine &random_generator) {
   if (operation == "insert") {
+    INFO("Op: insert");
     // Select batch_size edges of the graph, remove them but put them into edges
     // for later insertion. This will make sure that the graph is valid and th
     // after insertion.
@@ -188,6 +189,7 @@ void runDynamicBSuitor(Graph &G, BType &b,
       const auto [u, v] = GraphTools::randomEdge(G);
       assert(G.hasEdge(u, v));
       edges<WeightedEdge>.emplace_back(u, v, G.weight(u, v));
+      INFO("Edge: ", u, v, G.weight(u,v));
       G.removeEdge(u, v);
     }
   } else {
@@ -198,6 +200,7 @@ void runDynamicBSuitor(Graph &G, BType &b,
     auto min_w = std::numeric_limits<edgeweight>::max();
     auto max_w = std::numeric_limits<edgeweight>::min();
     edgeweight sum_w = 0;
+    INFO("Op: remove");
 
     G.parallelForEdges([&](node, node, const edgeweight ew) {
 #pragma omp critical
@@ -227,6 +230,7 @@ void runDynamicBSuitor(Graph &G, BType &b,
       std::normal_distribution<edgeweight> dist(avg_w, stddev);
       edgeweight w = dist(random_generator);
       edges<Edge>.emplace_back(u, v);
+      INFO("Edge: ", u, v, G.weight(u,v));
       G.addEdge(u, v, w);
     }
   }
@@ -317,6 +321,7 @@ int main(int argc, char *argv[]) {
   for (int i = 0; i < num_runs; i++) {
     Aux::Random::setSeed(i, true);
     std::default_random_engine random_generator(i);
+    INFO("Started run: ", i);
     (operation == "insert") ? edges<WeightedEdge>.clear() : edges<Edge>.clear();
     num_b.has_value() ? runDynamicBSuitor(G, num_b.value(), random_generator)
                       : runDynamicBSuitor(G, vec_b.value(), random_generator);
