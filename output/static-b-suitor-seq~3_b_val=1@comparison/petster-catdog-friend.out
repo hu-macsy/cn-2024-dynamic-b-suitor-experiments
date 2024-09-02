@@ -1,0 +1,87 @@
+Graph (623754, 13991746) Reading Done....!! took 3.79156
+bValue is constant for each vertex
+Input Processing Done: 0.0392782
+Initialization Done...!!
+Start Matching623754
+Iteration: 1 442288 0.384045
+Iteration: 2 308207 0.483229
+Iteration: 3 169860 0.405879
+Iteration: 4 101498 0.303894
+Iteration: 5 65295 0.228265
+Iteration: 6 43526 0.172924
+Iteration: 7 29743 0.131637
+Iteration: 8 20921 0.10113
+Iteration: 9 15310 0.078174
+Iteration: 10 11501 0.0638459
+Iteration: 11 8775 0.0520461
+Iteration: 12 6856 0.044349
+Iteration: 13 5423 0.0362967
+Iteration: 14 4232 0.029955
+Iteration: 15 3359 0.024414
+Iteration: 16 2719 0.0217341
+Iteration: 17 2244 0.0182458
+Iteration: 18 1878 0.015232
+Iteration: 19 1582 0.0121011
+Iteration: 20 1331 0.0106883
+Iteration: 21 1149 0.00828567
+Iteration: 22 988 0.00697832
+Iteration: 23 850 0.00619667
+Iteration: 24 714 0.00523946
+Iteration: 25 610 0.00450072
+Iteration: 26 522 0.0038592
+Iteration: 27 465 0.00327083
+Iteration: 28 395 0.00273718
+Iteration: 29 336 0.00238389
+Iteration: 30 297 0.00207943
+Iteration: 31 273 0.00188327
+Iteration: 32 235 0.00164141
+Iteration: 33 200 0.00136553
+Iteration: 34 175 0.00121768
+Iteration: 35 154 0.000989385
+Iteration: 36 132 0.000844148
+Iteration: 37 111 0.000766937
+Iteration: 38 95 0.000627938
+Iteration: 39 84 0.000561645
+Iteration: 40 75 0.000487497
+Iteration: 41 68 0.000409992
+Iteration: 42 61 0.00037457
+Iteration: 43 51 0.000336959
+Iteration: 44 46 0.000319554
+Iteration: 45 44 0.000280614
+Iteration: 46 37 0.000243529
+Iteration: 47 33 0.000200676
+Iteration: 48 30 0.000162125
+Iteration: 49 29 0.000129839
+Iteration: 50 22 0.000128537
+Iteration: 51 21 9.66899e-05
+Iteration: 52 18 9.1932e-05
+Iteration: 53 18 8.383e-05
+Iteration: 54 17 8.23671e-05
+Iteration: 55 15 8.24688e-05
+Iteration: 56 13 7.78569e-05
+Iteration: 57 12 7.66369e-05
+Iteration: 58 11 7.80211e-05
+Iteration: 59 9 7.18529e-05
+Iteration: 60 9 6.38361e-05
+Iteration: 61 9 5.64121e-05
+Iteration: 62 7 5.7094e-05
+Iteration: 63 7 4.9528e-05
+Iteration: 64 6 4.34071e-05
+Iteration: 65 6 3.59779e-05
+Iteration: 66 4 3.64429e-05
+Iteration: 67 4 2.8851e-05
+Iteration: 68 4 2.26651e-05
+Iteration: 69 3 2.31359e-05
+Iteration: 70 3 1.62139e-05
+Iteration: 71 3 9.38494e-06
+Iteration: 72 3 9.30903e-06
+Iteration: 73 2 1.1334e-05
+Iteration: 74 1 2.3481e-06
+Iteration: 75 0 1.48197e-06
+Matching Done....!!
+# of Iteration: 75
+Initialization Time: 0.00770761
+Matching Time: 2.67815
+Total Time: 2.68586
+Matching Weight: 172958
+General Matching Verified..!!

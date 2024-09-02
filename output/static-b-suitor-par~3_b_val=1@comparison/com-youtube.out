@@ -1,0 +1,21 @@
+Graph (1134890, 2987624) Reading Done....!! took 0.892974
+bValue is constant for each vertex
+Input Processing Done: 0.118692
+Initialization Done...!!
+Start Matching1134890
+Iteration: 1 568125 0.0142444
+Iteration: 2 22627 0.0142889
+Iteration: 3 2004 0.00190319
+Iteration: 4 213 0.000321239
+Iteration: 5 20 0.000269608
+Iteration: 6 6 0.00011837
+Iteration: 7 3 0.000122669
+Iteration: 8 1 0.0001117
+Iteration: 9 0 0.000113409
+Matching Done....!!
+# of Iteration: 9
+Initialization Time: 0.000744777
+Matching Time: 0.0315282
+Total Time: 0.0322729
+Matching Weight: 271496
+General Matching Verified..!!

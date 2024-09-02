@@ -1,0 +1,46 @@
+
+WARNING..!!
+The mtx file contains full matrix
+User has to make sure that input file has both (i,j) and (j,i) present.
+Matching is not defined if w(i,j) != w(j,i)
+
+Graph (2302925, 22838276) Reading Done....!! took 14.0065
+bValue is constant for each vertex
+Input Processing Done: 0.117206
+Initialization Done...!!
+Start Matching2302925
+Iteration: 1 1409869 1.13087
+Iteration: 2 208342 1.18246
+Iteration: 3 62560 0.547928
+Iteration: 4 23344 0.2275
+Iteration: 5 10130 0.0959556
+Iteration: 6 4856 0.0423973
+Iteration: 7 2417 0.0190934
+Iteration: 8 1310 0.00874285
+Iteration: 9 712 0.00429203
+Iteration: 10 421 0.0021576
+Iteration: 11 263 0.0010416
+Iteration: 12 166 0.000558781
+Iteration: 13 116 0.000287867
+Iteration: 14 94 0.000160821
+Iteration: 15 73 8.97379e-05
+Iteration: 16 59 6.7828e-05
+Iteration: 17 49 4.74469e-05
+Iteration: 18 42 4.0996e-05
+Iteration: 19 36 3.4492e-05
+Iteration: 20 32 4.57909e-05
+Iteration: 21 23 4.3027e-05
+Iteration: 22 17 1.9866e-05
+Iteration: 23 12 1.4171e-05
+Iteration: 24 9 1.00819e-05
+Iteration: 25 6 8.75606e-06
+Iteration: 26 3 6.58398e-06
+Iteration: 27 2 4.46301e-06
+Iteration: 28 0 1.85799e-06
+Matching Done....!!
+# of Iteration: 28
+Initialization Time: 0.0194604
+Matching Time: 3.264
+Total Time: 3.28346
+Matching Weight: 1.08834e+06
+General Matching Verified..!!

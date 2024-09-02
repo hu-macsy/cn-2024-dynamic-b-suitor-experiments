@@ -1,0 +1,24 @@
+
+WARNING..!!
+The mtx file contains full matrix
+User has to make sure that input file has both (i,j) and (j,i) present.
+Matching is not defined if w(i,j) != w(j,i)
+
+Graph (1048576, 8281690) Reading Done....!! took 12.5816
+bValue is constant for each vertex
+Input Processing Done: 0.0529175
+Initialization Done...!!
+Start Matching1048576
+Iteration: 1 368156 0.89844
+Iteration: 2 91447 0.207594
+Iteration: 3 6029 0.029658
+Iteration: 4 245 0.00175093
+Iteration: 5 3 6.92429e-05
+Iteration: 6 0 2.68593e-06
+Matching Done....!!
+# of Iteration: 6
+Initialization Time: 0.00799272
+Matching Time: 1.13757
+Total Time: 1.14556
+Matching Weight: 1.12374e+06
+General Matching Verified..!!

@@ -1,0 +1,28 @@
+Graph (45101, 14461095) Reading Done....!! took 8.49256
+bValue is constant for each vertex
+Input Processing Done: 0.0193665
+Initialization Done...!!
+Start Matching45101
+Iteration: 1 15642 0.0591576
+Iteration: 2 8809 0.0306702
+Iteration: 3 5164 0.0190499
+Iteration: 4 3077 0.0116561
+Iteration: 5 1701 0.00711706
+Iteration: 6 943 0.00395162
+Iteration: 7 489 0.00218508
+Iteration: 8 230 0.00103976
+Iteration: 9 116 0.000493948
+Iteration: 10 44 0.000203384
+Iteration: 11 18 8.86091e-05
+Iteration: 12 7 3.1824e-05
+Iteration: 13 3 8.12497e-06
+Iteration: 14 2 7.56094e-06
+Iteration: 15 1 2.424e-06
+Iteration: 16 0 1.52504e-06
+Matching Done....!!
+# of Iteration: 16
+Initialization Time: 0.00464897
+Matching Time: 0.135727
+Total Time: 0.140376
+Matching Weight: 1288
+General Matching Verified..!!

@@ -1,0 +1,33 @@
+Graph (14340, 9027024) Reading Done....!! took 4.03237
+bValue is constant for each vertex
+Input Processing Done: 0.0112196
+Initialization Done...!!
+Start Matching14340
+Iteration: 1 6747 0.0322178
+Iteration: 2 4538 0.0232602
+Iteration: 3 3143 0.0176193
+Iteration: 4 2163 0.0135214
+Iteration: 5 1486 0.0102984
+Iteration: 6 989 0.0075769
+Iteration: 7 655 0.00536798
+Iteration: 8 420 0.00369039
+Iteration: 9 260 0.00246005
+Iteration: 10 158 0.00147512
+Iteration: 11 83 0.000911478
+Iteration: 12 50 0.000577467
+Iteration: 13 26 0.000296564
+Iteration: 14 15 0.000162156
+Iteration: 15 7 7.9349e-05
+Iteration: 16 4 2.5899e-05
+Iteration: 17 1 1.1494e-05
+Iteration: 18 1 1.2608e-05
+Iteration: 19 1 6.93498e-06
+Iteration: 20 1 1.1878e-05
+Iteration: 21 0 6.70098e-06
+Matching Done....!!
+# of Iteration: 21
+Initialization Time: 0.00273148
+Matching Time: 0.119656
+Total Time: 0.122388
+Matching Weight: 431.368
+General Matching Verified..!!

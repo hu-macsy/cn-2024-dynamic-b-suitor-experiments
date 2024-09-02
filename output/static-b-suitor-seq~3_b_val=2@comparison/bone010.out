@@ -1,0 +1,75 @@
+Graph (986703, 35339811) Reading Done....!! took 16.2905
+bValue is constant for each vertex
+Input Processing Done: 0.0886374
+Initialization Done...!!
+Start Matching986703
+Iteration: 1 175062 0.332499
+Iteration: 2 98121 0.100067
+Iteration: 3 77022 0.0712614
+Iteration: 4 65371 0.060698
+Iteration: 5 56958 0.0532796
+Iteration: 6 49682 0.0467877
+Iteration: 7 43044 0.0399012
+Iteration: 8 37244 0.0338758
+Iteration: 9 32088 0.0287331
+Iteration: 10 27241 0.0242864
+Iteration: 11 22751 0.0201772
+Iteration: 12 19075 0.0166179
+Iteration: 13 16377 0.0139341
+Iteration: 14 14489 0.0120057
+Iteration: 15 12891 0.0105676
+Iteration: 16 11613 0.00940785
+Iteration: 17 10389 0.00841965
+Iteration: 18 9286 0.00746098
+Iteration: 19 8262 0.00657038
+Iteration: 20 7362 0.00585901
+Iteration: 21 6504 0.00512248
+Iteration: 22 5786 0.00449962
+Iteration: 23 5196 0.00397192
+Iteration: 24 4698 0.00356845
+Iteration: 25 4269 0.00322877
+Iteration: 26 3856 0.00291726
+Iteration: 27 3473 0.00261321
+Iteration: 28 3147 0.00234706
+Iteration: 29 2814 0.00212113
+Iteration: 30 2531 0.00191056
+Iteration: 31 2247 0.00169673
+Iteration: 32 1969 0.00148672
+Iteration: 33 1729 0.00129074
+Iteration: 34 1528 0.00113155
+Iteration: 35 1340 0.000999257
+Iteration: 36 1193 0.000877798
+Iteration: 37 1048 0.000774648
+Iteration: 38 949 0.000693892
+Iteration: 39 828 0.000624882
+Iteration: 40 723 0.000554707
+Iteration: 41 636 0.000472107
+Iteration: 42 551 0.000408788
+Iteration: 43 455 0.000349436
+Iteration: 44 381 0.000286702
+Iteration: 45 311 0.000229627
+Iteration: 46 265 0.000184736
+Iteration: 47 218 0.000155318
+Iteration: 48 177 0.000124189
+Iteration: 49 141 9.8038e-05
+Iteration: 50 121 7.98739e-05
+Iteration: 51 99 6.50351e-05
+Iteration: 52 80 5.3726e-05
+Iteration: 53 67 4.30919e-05
+Iteration: 54 57 3.9067e-05
+Iteration: 55 48 3.3595e-05
+Iteration: 56 36 2.94109e-05
+Iteration: 57 22 1.86439e-05
+Iteration: 58 14 1.2549e-05
+Iteration: 59 11 9.0031e-06
+Iteration: 60 7 7.82602e-06
+Iteration: 61 4 4.17698e-06
+Iteration: 62 2 2.79909e-06
+Iteration: 63 0 1.84693e-06
+Matching Done....!!
+# of Iteration: 63
+Initialization Time: 0.0220442
+Matching Time: 0.947809
+Total Time: 0.969854
+Matching Weight: 1.8201e+09
+General Matching Verified..!!
