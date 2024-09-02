@@ -43,3 +43,8 @@ builds
 aux
 output
 instances/*
+
+# Jupyter
+.ipynb_checkpoints
+.ipynb_checkpoints/*
+

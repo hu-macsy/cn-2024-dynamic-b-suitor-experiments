@@ -9,7 +9,6 @@ builds:
           - '-DCMAKE_INSTALL_PREFIX=@THIS_PREFIX_DIR@'
           - '-DCMAKE_BUILD_TYPE=Release'
           - '-DNETWORKIT_CXX_STANDARD=20'
-          # - '-DNETWORKIT_NODE_STORAGE=u32'
           - '@THIS_CLONE_DIR@'
         environ:
             'CXX': 'g++'
@@ -31,7 +30,6 @@ builds:
           - '@THIS_CLONE_DIR@'
         environ:
             'CXX': 'g++'
-            # 'CXXFLAGS': '-DNETWORKIT_U32_NODES'
     compile:
       - args: ['make', '-j@PARALLELISM@']
     install:
@@ -62,7 +60,6 @@ revisions:
         'dynamic-b-suitor': 'main'
         'static-b-suitor': 'master'
 
-# must be a subset of instances listed in graphs.txt and downloaded by download_graph_files.py or created by generate_random_graph.py
 instances:
   - repo: local
     set: real_sparse
@@ -143,10 +140,10 @@ experiments:
     args: ['bMatching', '-f', '@INSTANCE@', -b, '@EXTRA_ARGS@', '-v']
     num_nodes: 1
     procs_per_node: 1
-    num_threads: 256
+    num_threads: 128
     stdout: out
     environ:
-      OMP_NUM_THREADS: 256
+      OMP_NUM_THREADS: 128
 
 # need prefix (1_, 2_, 3_) because of lexicographical sorting of the cross product elements
 variants:
@@ -187,7 +184,6 @@ variants:
 
 matrix:
   include:
-    # Test operation axis on real graphs
     - experiments: [dynamic-b-suitor]
       instsets: [real_sparse]
       axes: ['operation', 'batch_size', 'b_value']
@@ -203,7 +199,6 @@ matrix:
       axes: ['operation', 'batch_size', 'b_value']
       revisions: [comparison]
 
-    # Test operation axis on a random generated graph
     - experiments: [dynamic-b-suitor]
       instsets: [random]
       axes: ['operation', 'batch_size', 'b_value']

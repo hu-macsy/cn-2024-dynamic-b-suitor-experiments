@@ -32,39 +32,12 @@ std::vector<count> dyn_num_affected;
 
 std::vector<dur> dyn_rt;
 std::vector<dur> stat_rt;
-// double dyn_mean = 0.0;
-// double stat_mean = 0.0;
-// double dyn_var;
-// double stat_var;
 
 int num_runs = 50;
 count n;
 // limits for the generation of random b values
 [[maybe_unused]] count b_min = 1;
 [[maybe_unused]] count b_max = 10;
-
-// void calculateMean() {
-//   for (int i = 0; i < dyn_rt.size(); i++) {
-//     dyn_mean += dyn_rt.at(i).count();
-//     stat_mean += stat_rt.at(i).count();
-//   }
-// }
-
-// void calculateVariance() {
-//   double dyn_sum_diff_sq = 0.0;
-//   double stat_sum_diff_sq = 0.0;
-
-//   for (int i = 0; i < dyn_rt.size(); i++) {
-//     double dyn_diff = dyn_rt.at(i).count() - dyn_mean;
-//     double stat_diff = stat_rt.at(i).count() - stat_mean;
-
-//     dyn_sum_diff_sq += dyn_diff * dyn_diff;
-//     stat_sum_diff_sq += stat_diff * stat_diff;
-//   }
-
-//   dyn_var = dyn_sum_diff_sq / dyn_rt.size();
-//   stat_var = stat_sum_diff_sq / stat_rt.size();
-// }
 
 std::string pluralS(int num) {
   return (num == 1) ? "" : "s";
@@ -273,15 +246,11 @@ void printResults() {
     std::cout << v << std::endl;
   }
   std::cout << std::endl;
-  // std::cout << "(Dynamic) Adding " << batch_size << " edges took " <<
-  // dyn_mean << "s on average.\n";
   std::cout << "(Dynamic) runtimes [s] per run:\n";
   for (auto r : dyn_rt) {
     std::cout << r.count() << std::endl;
   }
   std::cout << std::endl;
-  // std::cout << "(Static) Running b-suitor took " << stat_mean << "s on
-  // average.\n";
   std::cout << "(Static) runtimes [s] per run:\n";
   for (auto r : stat_rt) {
     std::cout << r.count() << std::endl;
@@ -330,9 +299,6 @@ int main(int argc, char *argv[]) {
 
   num_b.has_value() ? runStaticBSuitor(G, num_b.value())
                     : runStaticBSuitor(G, vec_b.value());
-
-  // calculateMean();
-  // calculateVariance();
 
   printResults();
 
