@@ -18,7 +18,7 @@ builds:
       - args: ['make', 'install']
   
   - name: dynamic-b-suitor
-    git: 'https://github.com/hu-macsy/esa-2024-dynamic-b-suitor-experiments.git'
+    git: 'https://github.com/hu-macsy/cn-2024-dynamic-b-suitor-experiments.git'
     requires:
       - networkit
     configure:
